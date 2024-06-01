@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Website Riko Randika</title>
+    <link rel="shortcut icon" href="BINJAI.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: rgba(0, 255, 0, 0.5);
+            box-shadow: 0px 0px 2px 2px rgba(0, 255, 0, 0.5);
+            transition: 0,7s;
+        }
+
+        label {
+            color: black;
+        }
+    </style>
+</head>
+<body style="background-image: url(pinked.jpg);">
+    <div class="container">
+        <div class="header" style="background-color: rgb(16 185 129);">
+            <div class="head" style="background-image: url(pinked.jpg);">
+            <h1 style="filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));">FORM LOGIN</h1>
+            <h4 style="filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));">Website Riko Randika</h4>
+        </div>
+        <br>
+        <br>
+        <div style="justify-content: space-between; display: flex;">
+            <a href="index.html" style="position: left; padding-left: 55px; text-decoration: none; color: blue;">&lt;&lt; Back to home</a>
+        </div><br>
+        <!-- FORM -->
+        <form id="registrationForm">
+            <!-- email -->
+            <div class="form-row">
+                <label for="email" style="margin-left: 20px;"><i class="fa-solid fa-envelope"></i> Email Akun <span style="color: red;">*</span></label>
+                <input class="full-input" type="email" id="email" name="email" placeholder="Alamat email anda" required>
+            </div>
+            <!-- end email -->
+
+            <!-- password -->
+            <div class="form-row">
+                <label for="password" style="margin-left: 10px;"><i class="fa-solid fa-lock"></i> Password <span style="color: red;">*</span></label>
+                <input class="full-input" type="password" id="password" name="password" placeholder="Password anda" required>
+            </div>
+            <!-- end password -->
+
+            <!-- button -->
+            <div class="form-submit">
+                <button id="submitButton" class="btn" type="button" style="background-color: rgb(3 105 161); color: rgb(250 250 249); filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)); border-radius: 5px; padding-right: 120px; padding-left: 120px;"><span class="glyphicon glyphicon-log-in" aria-hidden="true">Login</span></button>
+            </div><br>
+            <a href="daftar.html" style="color: blue; text-decoration: none;">Belum mempunyai akun? Daftar disini</a><br><br>
+            <!-- end button -->
+        </form>
+        <!-- END FORM -->
+    </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

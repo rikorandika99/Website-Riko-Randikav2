@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Riko Randika</title>
+    <link rel="shortcut icon" href="BINJAI.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: rgba(0, 255, 0, 0.5);
+            box-shadow: 0px 0px 2px 2px rgba(0, 255, 0, 0.5);
+            transition: 0,7s;
+        }
+
+        label {
+            color: black;
+        }
+    </style>
+</head>
+<body style="background-image: url(pinked.jpg);">
+    <div class="container">
+        <div class="header" style="background-color: rgb(16 185 129);">
+            <div class="head" style="background-image: url(pinked.jpg);">
+                <h1 style="filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));">FORM PENDAFTARAN</h1>
+                <h4 style="filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));">WEBSITE RIKO RANDIKA</h4>
+            </div>
+            <br><br>
+            <div style="justify-content: space-between; display: flex;">
+                <a href="index.html" style="position: left; padding-left: 55px; text-decoration: none; color: blue;">&lt;&lt; Back to home</a>
+            </div>
+            <p class="italic" style="margin-right: 480px;"><span style="color: red; margin-right: 0px;">*</span> Berisi halaman yang harus diisi</p>
+            <br>
+            <div id="error-message" style="color: red;"></div>
+            <!-- FORM -->
+            <form action="register.php" method="post" id="registrationForm">
+                <!-- nama -->
+                <div class="form-row">
+                    <label for="nama" style="margin-left: 20px;"><i class="fa-solid fa-user"></i> Nama Lengkap <span style="color: red;">*</span></label>
+                    <p class="italic" style="margin-left: -160px;">* Perhatian : Untuk nama wajib menggunakan huruf Kapital.</p>
+                    <input class="full-input" type="text" id="nama" name="nama" placeholder="cth : RIKO RANDIKA" required>
+                </div>
+                <!-- end nama -->
+
+                <!-- alamat -->
+                <div class="form-row">
+                    <label for="alamat" style="margin-left: -40px;"><i class="fa-solid fa-location-dot"></i> Alamat <span style="color: red;">*</span></label>
+                    <input class="full-input" id="alamat" name="alamat" type="text" placeholder="cth : Jalan Nusantara No.1" required>
+                </div>
+                <!-- end alamat -->
+
+                <!-- tempat lahir -->
+                <div class="form-row">
+                    <label for="tempat_lahir" style="margin-left: 15px;"><i class="fa-solid fa-city"></i> Tempat Lahir <span style="color: red;">*</span></label>
+                    <input class="full-input" id="tempat_lahir" name="tempat_lahir" type="text" placeholder="cth : Kota Binjai" required>
+                </div>
+                <!-- end tempat lahir -->
+
+                <!-- tanggal lahir -->
+                <div class="form-row">
+                    <label for="tanggal_lahir" style="margin-left: 15px;"><i class="fa-solid fa-calendar-days"></i> Tanggal Lahir <span style="color: red;">*</span></label>
+                    <input class="full-input" id="tanggal_lahir" name="tanggal_lahir" type="date" placeholder="dd/mm/yyyy" required>
+                </div>
+                <!-- end tanggal lahir -->
+
+                <!-- agama -->
+                <div class="form-input">
+                    <label for="agama" style="margin-left: -75px;"><i class="fa-solid fa-person-praying"></i> Agama <span style="color: red;">*</span></label>
+                    <select class="full-input" id="agama" name="agama" required>
+                        <option value="">Pilih Agama</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Katolik">Katolik</option>
+                        <option value="Budha">Budha</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Konghucu">Konghucu</option>
+                    </select>
+                </div>
+                <!-- end agama -->
+
+                <!-- provinsi -->
+                <div class="form-input">
+                    <label for="provinsi" style="margin-left: -65px;"><i class="fa-solid fa-earth-americas"></i> Provinsi <span style="color: red;">*</span></label>
+                    <select class="full-input" id="provinsi" name="provinsi" onchange="updateKota()" required>
+                        <option value="">Pilih Provinsi</option>
+                        <option value="Aceh">Aceh</option>
+                        <option value="Sumatera Utara">Sumatera Utara</option>
+                        <option value="Sumatera Barat">Sumatera Barat</option>
+                        <option value="Riau">Riau</option>
+                        <option value="Kepulauan Riau">Kepulauan Riau</option>
+                        <option value="Jambi">Jambi</option>
+                        <option value="Sumatera Selatan">Sumatera Selatan</option>
+                        <option value="Bangka Belitung">Bangka Belitung</option>
+                        <option value="Bengkulu">Bengkulu</option>
+                        <option value="Lampung">Lampung</option>
+                        <option value="DKI Jakarta">DKI Jakarta</option>
+                        <option value="Jawa Barat">Jawa Barat</option>
+                        <option value="Banten">Banten</option>
+                        <option value="Jawa Tengah">Jawa Tengah</option>
+                        <option value="DI Yogyakarta">DI Yogyakarta</option>
+                        <option value="Jawa Timur">Jawa Timur</option>
+                        <option value="Bali">Bali</option>
+                        <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                        <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                        <option value="Kalimantan Barat">Kalimantan Barat</option>
+                        <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                        <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                        <option value="Kalimantan Timur">Kalimantan Timur</option>
+                        <option value="Kalimantan Utara">Kalimantan Utara</option>
+                        <option value="Sulawesi Utara">Sulawesi Utara</option>
+                        <option value="Gorontalo">Gorontalo</option>
+                        <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                        <option value="Sulawesi Barat">Sulawesi Barat</option>
+                        <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                        <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                        <option value="Maluku">Maluku</option>
+                        <option value="Maluku Utara">Maluku Utara</option>
+                        <option value="Papua Barat">Papua Barat</option>
+                        <option value="Papua">Papua</option>
+                        <option value="Papua Tengah">Papua Tengah</option>
+                        <option value="Papua Pegunungan">Papua Pegunungan</option>
+                        <option value="Papua Selatan">Papua Selatan</option>
+                        <option value="Papua Barat Daya">Papua Barat Daya</option>
+                    </select>
+                </div>
+                <!-- end provinsi -->
+
+                <!-- kota -->
+                <div class="form-input">
+                    <label for="kota" style="margin-left: -80px;"><i class="fa-solid fa-city"></i> Kota <span style="color: red;">*</span></label>
+                    <select class="full-input" id="kota" name="kota" required>
+                        <option value="">Pilih Kota</option>
+                    </select>
+                </div>
+                <!-- end kota -->
+
+                <!-- jenis kelamin -->
+                <div class="form-row">
+                    <label for="jenis_kelamin" style="margin-left: 25px;"><i class="fa-solid fa-venus-mars"></i> Jenis Kelamin <span style="color: red;">*</span></label>
+                    <input type="radio" name="jenis_kelamin" value="Laki-laki" style="margin-left: -410px;" required><span style="color: black;">Laki-laki</span>
+                    <br>
+                    <input type="radio" name="jenis_kelamin" value="Perempuan" style="margin-left: -385px;" required><span style="color: black;">Perempuan</span>
+                </div>
+                <!-- end jenis kelamin -->
+
+                <!-- email -->
+                <div class="form-row">
+                    <label for="email" style="margin-left: 15px;"><i class="fa-solid fa-envelope"></i> Email Akun <span style="color: red;">*</span></label>
+                    <p class="italic" style="margin-left: -150px;">* Email akan dijadikan username waktu login, jadi wajib ingat.</p>
+                    <input class="full-input" type="email" id="email" name="email" placeholder="cth : rikorandika@gmail.com" required>
+                </div>
+                <!-- end email -->
+
+                <!-- no hp -->
+                <div class="form-row">
+                    <label for="nomor_hp" style="margin-left: 23px;"><i class="fa-solid fa-phone"></i> Nomor Hp Aktif <span style="color: red;">*</span></label>
+                    <input class="full-input" type="text" id="nomor_hp" name="nomor_hp" placeholder="cth : 081234567890" required>
+                </div>
+                <!-- end no hp -->
+
+                <!-- whatsapp -->
+                <div class="form-row">
+                    <label for="nomor_hp" style="margin-left: 1px;"><i class="fa-brands fa-whatsapp"></i> Nomor Wa <span style="color: red;">*</span></label>
+                    <p class="italic" style="margin-left: -290px;">* Ketik lagi jika sama seperti Nomor Hp.</p>
+                    <input class="full-input" type="text" id="nomor_whatsapp" name="nomor_whatsapp" placeholder="cth : 081234567890" required>
+                </div>
+                <!-- end whatsapp -->
+
+                <!-- kota domisili -->
+                <div class="form-row">
+                    <label for="kota_domisili" style="margin-left: 20px;"><i class="fa-solid fa-city"></i> Kota Domisili <span style="color: red;">*</span></label>
+                    <input class="full-input" type="text" id="kota_domisili" name="kota_domisili" placeholder="cth : Kota Binjai" required>
+                </div>
+                <!-- end kota domisili -->
+
+                <!-- pekerjaan -->
+                <div class="form-row">
+                    <label for="pekerjaan"><i class="fa-solid fa-briefcase"></i> Pekerjaan <span style="color: red;">*</span></label></label>
+                    <input type="radio" name="pekerjaan" value="Profesional IT" style="margin-left: -370px;" required><span style="color: black;">Profesional IT</span>
+                    <br>
+                    <input type="radio" name="pekerjaan" value="Karyawan Swasta" style="margin-left: -340px;" required><span style="color: black;">Karyawan Swasta</span>
+                    <br>
+                    <input type="radio" name="pekerjaan" value="Pelajar/Mahasiswa" style="margin-left: -332px;" required><span style="color: black;">Pelajar/Mahasiswa</span>
+                    <br>
+                    <input type="radio" name="pekerjaan" value="Other" style="margin-left: -324px;" required><input class="short-input" type="text" name="pekerjaan_lain" placeholder="Lainnya...">
+                </div>
+                <!-- end pekerjaan -->
+
+                <!-- instansi -->
+                <div class="form-row">
+                    <label for="instansi" style="margin-left: 24px;"><i class="fa-solid fa-tents"></i> Nama Instansi <span style="color: red;">*</span></label>
+                    <input class="full-input" type="text" id="instansi" name="instansi" placeholder="cth : Universitas, STMIK" required>
+                </div>
+                <!-- end instansi -->
+
+                <!-- password -->
+                <div class="form-row">
+                    <label for="password" style="margin-left: -10px;"><i class="fa-solid fa-lock"></i> Password <span style="color: red;">*</span></label>
+                    <p class="italic" style="margin-left: -240px;">* Wajib ingat password anda karena ini penting.</p>
+                    <input class="full-input" type="password" id="password" name="password" placeholder="Password anda" required>
+                </div>
+                <!-- end password -->
+
+                <!-- button -->
+                <div class="form-submit">
+                    <button type="submit" class="btn" style="background-color: rgb(3 105 161); color: rgb(250 250 249); filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)); border-radius: 5px; padding-right: 120px; padding-left: 120px;" id="submitButton">Daftar</button>
+                </div><br>
+                <a href="login.html" style="color: blue; text-decoration: none;">Sudah mempunyai akun? Masuk disini</a><br><br>
+                <!-- end button -->
+            </form>
+            <!-- END FORM -->
+        </div>
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            var pekerjaanRadios = document.getElementsByName('pekerjaan');
+            var pekerjaanLain = document.getElementById('pekerjaan_lain');
+            var isPekerjaanChecked = false;
+            for (var i = 0; i < pekerjaanRadios.length; i++) {
+                if (pekerjaanRadios[i].checked) {
+                    isPekerjaanChecked = true;
+                    if (pekerjaanRadios[i].value === 'Other' && pekerjaanLain.value.trim() === '') {
+                        alert('Pekerjaan "Other" memerlukan penjelasan.');
+                        pekerjaanLain.focus();
+                        event.preventDefault();
+                        return false;
+                    }
+                }
+            }
+            if (!isPekerjaanChecked) {
+                alert('Silakan pilih salah satu pekerjaan.');
+                event.preventDefault();
+                return false;
+            }
+        });
+
+        const kotaByProvinsi = {
+            "Aceh": ["Banda Aceh", "Langsa", "Lhokseumawe", "Sabang", "Subulussalam"],
+            "Sumatera Utara": ["Medan", "Binjai", "Tanjungbalai", "Pematangsiantar", "Tebing Tinggi", "Sibolga", "Padang Sidempuan", "Gunungsitoli"],
+            "Sumatera Barat": ["Padang", "Bukittinggi", "Padangpanjang", "Pariaman", "Payakumbuh", "Sawahlunto", "Solok"],
+            "Riau": ["Pekanbaru", "Dumai"],
+            "Kepulauan Riau": ["Tanjung Pinang", "Batam"],
+            "Jambi": ["Jambi", "Sungai Penuh"],
+            "Sumatera Selatan": ["Palembang", "Prabumulih", "Pagar Alam", "Lubuklinggau"],
+            "Bangka Belitung": ["Pangkal Pinang"],
+            "Bengkulu": ["Bengkulu"],
+            "Lampung": ["Bandar Lampung", "Metro"],
+            "DKI Jakarta": ["Jakarta Pusat", "Jakarta Utara", "Jakarta Barat", "Jakarta Selatan", "Jakarta Timur"],
+            "Jawa Barat": ["Bandung", "Bekasi", "Bogor", "Cimahi", "Cirebon", "Depok", "Sukabumi", "Tasikmalaya", "Banjar"],
+            "Banten": ["Serang", "Cilegon", "Tangerang Selatan", "Tangerang"],
+            "Jawa Tengah": ["Semarang", "Surakarta", "Salatiga", "Pekalongan", "Magelang", "Tegal"],
+            "DI Yogyakarta": ["Yogyakarta"],
+            "Jawa Timur": ["Surabaya", "Malang", "Madiun", "Blitar", "Mojokerto", "Pasuruan", "Probolinggo", "Batu"],
+            "Bali": ["Denpasar"],
+            "Nusa Tenggara Barat": ["Mataram", "Bima"],
+            "Nusa Tenggara Timur": ["Kupang"],
+            "Kalimantan Barat": ["Pontianak", "Singkawang"],
+            "Kalimantan Tengah": ["Palangka Raya"],
+            "Kalimantan Selatan": ["Banjarmasin", "Banjarbaru"],
+            "Kalimantan Timur": ["Samarinda", "Balikpapan", "Bontang"],
+            "Kalimantan Utara": ["Tarakan"],
+            "Sulawesi Utara": ["Manado", "Bitung", "Tomohon", "Kotamobagu"],
+            "Gorontalo": ["Gorontalo"],
+            "Sulawesi Tengah": ["Palu"],
+            "Sulawesi Barat": ["Mamuju"],
+            "Sulawesi Selatan": ["Makassar", "Parepare", "Palopo"],
+            "Sulawesi Tenggara": ["Kendari", "Bau-Bau"],
+            "Maluku": ["Ambon", "Tual"],
+            "Maluku Utara": ["Ternate", "Tidore Kepulauan"],
+            "Papua Barat": ["Sorong"],
+            "Papua": ["Jayapura"],
+            "Papua Tengah": ["Nabire"],
+            "Papua Pegunungan": ["Wamena"],
+            "Papua Selatan": ["Merauke"],
+            "Papua Barat Daya": ["Sorong"]
+        };
+
+        function updateKota() {
+            const provinsiSelect = document.getElementById("provinsi");
+            const kotaSelect = document.getElementById("kota");
+            const selectedProvinsi = provinsiSelect.value;
+
+            while (kotaSelect.options.length > 1) {
+                kotaSelect.remove(1);
+            }
+
+            if (selectedProvinsi && kotaByProvinsi[selectedProvinsi]) {
+                const kotaList = kotaByProvinsi[selectedProvinsi];
+                kotaList.forEach(function(kota) {
+                    const option = document.createElement("option");
+                    option.value = kota;
+                    option.text = kota;
+                    kotaSelect.add(option);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
